@@ -40,42 +40,7 @@ document.querySelector("#main").addEventListener("click",function(){
 });
 }); 
 
-var elems = document.querySelectorAll(".par");
 
-elems.forEach(function(par){
-    var ps =par.querySelectorAll("p");
-var index= 0;
-var animating =false;
-
-document.querySelector("#main").addEventListener("click",function(){
-    if(!animating)
-    {
-        animating=true;
-            gsap.to(ps[index],{
-        top:'-=100%',
-        ease: Expo.easeInOut,
-        duration:1,
-        onComplete:function()
-        {
-        gsap.set(this._targets[0],{ top: "100%" });
-           animating = false;
-        },
-    });
-
-
-    index === ps.length-1 ? (index = 0) : index++;
-
-
-      gsap.to(ps[index],{
-        top:'-=100%',
-        ease: Expo.easeInOut,
-        duration:1
-    });
-
-    }
-
-});
-}); 
 
 
 

@@ -1,0 +1,25 @@
+ * { 
+Margin:0;
+Padding:0;
+Box-sizing: border-box;
+font-family: Arial, sans-serif;
+}
+
+html,body{
+Width:100%;
+Height:100%;
+}
+#container{
+    max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+#continaer h2{
+    text-align: center;
+}
+#container p {
+    text-align: justify;
+}

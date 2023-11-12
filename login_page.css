@@ -11,11 +11,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-<<<<<<< HEAD
-    background: url("../pic/levi-guzman-zdSoe8za6Hs-unsplash.jpg");
-=======
-    background:url(/pic/levi-guzman-zdSoe8za6Hs-unsplash.jpg);
->>>>>>> ec4fa7cdf597d1e672125e3522c4ef7d5bef47f7
+    background: url("./pic/levi-guzman-zdSoe8za6Hs-unsplash.jpg");
     background-size: cover;
     background-position: center;
 }

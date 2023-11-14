@@ -11,10 +11,11 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("./pic/levi-guzman-zdSoe8za6Hs-unsplash.jpg");
+    background: url(" ./pic/levi-guzman-zdSoe8za6Hs-unsplash.jpg");
     background-size: cover;
     background-position: center;
 }
+
 .wrapper
 {
     width: 420px;
@@ -27,6 +28,7 @@ body
     padding: 30px 40px;
 
 }
+
 .wrapper h1{
     font-size: 36px;
     text-align: center;
@@ -50,8 +52,10 @@ body
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
+
 .input-box input::placeholder{
     color: #fff;
+    
 }
 .input-box i{
     position: absolute;

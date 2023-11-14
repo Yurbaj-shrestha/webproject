@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(isset($_SESSION["user"]))
+{
+header("Location: index.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +30,6 @@
             $password= $_POST["password"];
             $confirmpassword= $_POST["cpassword"];
             $profile_type= $_POST["profileType"];
-
-
-
-
-            $passwordhash = password_hash($password,PASSWORD_DEFAULT);
-
-
-
-
             $errors=array();
             if ((empty($username)or empty($phone_number)or empty($password) or empty($confirmpassword)or empty($profile_type)))
             {
@@ -75,7 +72,7 @@
                  $prepare=mysqli_stmt_prepare($stmt,$sql);
                  if($prepare)
                  {
-                     mysqli_stmt_bind_param($stmt,"ssdss",$username,$email,$phone_number,$passwordhash,$profile_type);
+                     mysqli_stmt_bind_param($stmt,"ssdss",$username,$email,$phone_number,$password,$profile_type);
                      mysqli_stmt_execute($stmt);
                      echo "<div class='alert alert-success'>You are registerd successfully.</div>";
                  }
@@ -90,9 +87,11 @@
         ?>
         <form action="Register.php" method="post">
             <h1>SignUp</h1>
-                <a href="login.html">
-                    login
-                 </a>
+                   <div class="back">
+     <a href="login.php">
+        <i class='bx bx-left-arrow-alt'></i>
+    </a>
+   </div>
             <div class="input-box">
                 <input type="text" placeholder="Username" name="username" >
                 <i class='bx bxs-user'></i>

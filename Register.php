@@ -24,12 +24,25 @@ header("Location: index.php");
         <?php
         if (isset($_POST["submit"]))
         {
+
+
+                $filename = $_FILES["image"]["name"];
+    $temp_name = $_FILES["image"]["tmp_name"];
+    $folder = "img/".$filename;
+
+    // Move uploaded file to designated directory
+    move_uploaded_file($temp_name , $folder);
+    
+            
             $username= $_POST["username"];
             $email=$_POST["email"];
             $phone_number= $_POST["phonenumber"];
             $password= $_POST["password"];
             $confirmpassword= $_POST["cpassword"];
             $profile_type= $_POST["profileType"];
+
+
+
             $errors=array();
             if ((empty($username)or empty($phone_number)or empty($password) or empty($confirmpassword)or empty($profile_type)))
             {
@@ -67,12 +80,12 @@ header("Location: index.php");
             else
             {
                 
-                $sql="INSERT INTO users (`username`, `email`, `phone_number`, `password`, `profile_type`) VALUES ( ?, ?, ?, ?, ?)";
+             $sql="INSERT INTO users ( `img_dir`,`username`,`email`, `phone_number`, `password`, `profile_type`) VALUES (?,?, ?, ?, ?, ?)";
                 $stmt=mysqli_stmt_init($conn);
                  $prepare=mysqli_stmt_prepare($stmt,$sql);
                  if($prepare)
                  {
-                     mysqli_stmt_bind_param($stmt,"ssdss",$username,$email,$phone_number,$password,$profile_type);
+                     mysqli_stmt_bind_param($stmt,"sssdss",$folder,$username,$email,$phone_number,$password,$profile_type);
                      mysqli_stmt_execute($stmt);
                      echo "<div class='alert alert-success'>You are registerd successfully.</div>";
                  }
@@ -85,18 +98,24 @@ header("Location: index.php");
             
         }
         ?>
-        <form action="Register.php" method="post">
-            <h1>SignUp</h1>
-                   <div class="back">
+        <form action="Register.php" method="post" enctype="multipart/form-data">
+  <h2>           
      <a href="login.php">
         <i class='bx bx-left-arrow-alt'></i>
     </a>
-   </div>
+    </h2>
+            <h1>SignUp</h1>
+            <label>Profile picture</label>
+               <input type="file" name="image" id="image">
+            
+               
+            
             <div class="input-box">
                 <input type="text" placeholder="Username" name="username" >
                 <i class='bx bxs-user'></i>
             </div>
-                        <div class="input-box">
+
+            <div class="input-box">
                 <input type="email" placeholder="Email" name="email" >
                 <i class='bx bxs-envelope'></i>
             </div>

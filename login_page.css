@@ -30,8 +30,17 @@ body
 }
 
 .wrapper h1{
-    font-size: 36px;
+    font-size: 40px;
     text-align: center;
+    
+}
+
+.wrapper h2 i{
+    padding-top: 10px;
+    font-size: 36px;
+    justify-content:left;
+    text-align: left;
+    color: #fff;
 }
 .wrapper .input-box{
     position: relative;

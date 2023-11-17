@@ -52,12 +52,16 @@ $user= mysqli_fetch_array ($result, MYSQLI_ASSOC);
     }
   ?>
 <form action="login.php" method="post">
-   <div class="back">
+    <h2>
+                   
      <a href="index.html">
         <i class='bx bx-left-arrow-alt'></i>
     </a>
-   </div>
-    <h1>Login</h1>
+    </h2>
+    <h1>
+
+   Login
+    </h1>
     <div class="input-box">
        <input type="email" placeholder="Enter Email:" name="email">
     <i class='bx bxs-user'></i>

@@ -23,14 +23,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
-    padding: 70px 60px;
+    padding: 60px 50px;
 
 }
 
 .wrapper h1 {
-
-    font-size: 35px;
+    font-size: 60px;
     text-align: center;
+}
+.wrapper h2 i {
+    font-size: 36px;
+    justify-content: left;
+    text-align: left;
+    color: #fff;
 }
 
 .wrapper .input-box {
